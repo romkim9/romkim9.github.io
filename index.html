@@ -5,7 +5,7 @@
 
     <title>8-Puzzle Solver</title>
     <meta name="description" content="8 puzzle solver and tree visualizer. Supports breadth-first,
-        uniform-cost, depth-first, iterative-deepening, greedy-best and A* search algorithms.">
+        depth-first, greedy-best and A* search algorithms.">
     <meta name="author" content="Deniz Gurkaynak">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="./favicon.png" />
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div id="board">
+    <div id="ㅃ">
         <div id="board-item-1" class="board-item">1</div>
         <div id="board-item-2" class="board-item">2</div>
         <div id="board-item-3" class="board-item">3</div>
@@ -26,24 +26,24 @@
     </div>
     <div id="visualization"></div>
     <div id="controls">
-        <div class="heading">Board</div>
+        <div class="heading">8퍼즐 판</div>
         <div class="content">
-            <button id="randomize">Randomize</button>
-            <button id="customInput">Enter Custom State</button>
+            <button id="randomize">섞기</button>
+            <button id="customInput">임의로 정하기</button>
         </div>
 
-        <div class="heading">Search</div>
+        <div class="heading">알고리즘 설정</div>
         <div class="content">
             <label>Algorithm</label>
             <select id="searchType">
-                <option value="breadthFirst">Breadth-First</option>
-                <option value="depthFirst">Depth-First</option>
-                <option value="greedyBest" selected>Greedy-Best</option>
-                <option value="aStar">A*</option>
+                <option value="breadthFirst">너비우선 알고리즘</option>
+                <option value="depthFirst">깊이우선 알고리즘</option>
+                <option value="greedyBest" selected>탐욕 알고리즘</option>
+                <option value="aStar">A* 알고리즘</option>
             </select>
-            <label>Iteration Limit</label>
+            <label>반복 제한</label>
             <input type="number" id="iterationLimit" value="10000">
-            <label>Depth Limit</label>
+            <label>깊이 제한</label>
             <input type="number" id="depthLimit" value="0">
             <label style="display: none;">
                 <input type="checkbox" id="visualizationCheck" checked>
@@ -54,12 +54,12 @@
                 Early check optimization
             </label>
 
-            <button id="searchStep">Iterate one step</button>
-            <button id="search">Search</button>
-            <button id="searchStop" style="display: none;">Stop</button>
+            <button id="searchStep">1번 진행</button>
+            <button id="search">탐색 시작</button>
+            <button id="searchStop" style="display: none;">정지</button>
         </div>
 
-        <div class="heading">Search Result</div>
+        <div class="heading">결과</div>
         <div id="searchResult" class="content"></div>
     </div>
 
